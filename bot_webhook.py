@@ -82,7 +82,7 @@ def error(bot,update):
 print('hi!')
 bot = Bot(TOKEN)
 try:
-    bot.set_webhook("https://bot-20-maurya.herokuapp.com/"+TOKEN)
+    bot.set_webhook("https://telegram-bot-maurya.herokuapp.com/"+TOKEN)
 except Exception as e:
     print(e)
 
