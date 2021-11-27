@@ -10,8 +10,7 @@ import json
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-TOKEN = '2146854676:AAH9A5Jm9dEiMTIzMWdqlt4F_yvV7sQiBKk'
-key = 'dd69b939aa0d41bfb2650037038d2b24'
+
 list = [['send_news business','send_news entertainment'],['send_news general','send_news health'],['send_news science','send_news sports'],['send_news technology']]
 
 app = Flask(__name__)
@@ -62,10 +61,10 @@ def echo_text(bot,update):
                 bot.send_message(chat_id = update.message.chat.id,text = reply)
     else :
         url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
-        querystring = {"bid":"178","key":"sX5A2PcYZbsN5EY6","uid":update.message.from_user.first_name,"msg":update.message.text}
+        querystring = {"bid":"178","key":KEY,"uid":update.message.from_user.first_name,"msg":update.message.text}
         headers = {
             'x-rapidapi-host': "acobot-brainshop-ai-v1.p.rapidapi.com",
-            'x-rapidapi-key': "b62c424c07mshb6a14119c9fc6ddp1cf5d5jsn2ec41d98fdfa"
+            'x-rapidapi-key': KEY
             }
         response = requests.request("GET", url, headers=headers, params=querystring)
         response = json.loads(response.text)
